@@ -9,14 +9,6 @@ from collections import deque
 
 logger = logging.getLogger(__name__)
 
-class Node:
-    def __init__(self, key, value, expiryTime):
-        self.prev = None
-        self.next = None
-        self.key = key
-        self.value = value
-        self.expiryTime = expiryTime
-
 class LRU(PyMYSQLClient):
     def __init__(self, maxKeys=1024):
         self.maxKeys = maxKeys
